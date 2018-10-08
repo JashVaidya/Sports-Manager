@@ -6,5 +6,5 @@ The site will have features such as the ability to log into personal profiles, a
 The users are also allowed to make changes to certain data and request/suggest changes to be reviewed and updated by the administrators.
 
 # Team Members
-Jash Vaidya
+Jash Vaidya,
 William Mabry
