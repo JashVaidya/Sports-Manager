@@ -7,3 +7,4 @@ The users are also allowed to make changes to certain data and request/suggest c
 
 # Team Members
 Jash Vaidya
+William Mabry
