@@ -22,10 +22,10 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
+                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="login.php">Login<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="login.php">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="createAccount.php">Create Account</a>
@@ -38,7 +38,7 @@
         <header class="landing">
             <div class="container">
                 <div class="landing-text">
-                    <form class="form-signin">
+                    <form action="account.php" class="form-signin">
                         <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
                         <label for="inputUserName" class="sr-only">Username</label>
                         <input type="text" id="inputUserName" class="form-control" placeholder="Username" required=""

@@ -71,3 +71,14 @@ header.landing .landing-text .landing-heading {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+
+img:hover {
+    cursor: pointer;
+}
+
+#searchbg {
+    background-image: url("../Assets/bg.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
