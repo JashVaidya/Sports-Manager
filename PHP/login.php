@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Login</title>
 </head>
-
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.php">SM</a>
@@ -33,25 +31,15 @@
         </ul>
     </div>
 </nav>
-<div class="jumbotron">
-    <div class="container">
-        <header class="landing">
-            <div class="container">
-                <div class="landing-text">
-                    <form action="account.php" class="form-signin">
-                        <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-                        <label for="inputUserName" class="sr-only">Username</label>
-                        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required=""
-                               autofocus="">
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                               required="">
-                        <button class="btn btn-md btn-dark btn-block" type="submit">Sign in</button>
-                    </form>
-                </div>
-            </div>
-        </header>
-    </div>
+
+<div id="loginbg" class="jumbotron">
+  <div class="glass-signin-join">
+    <form class="form-signin" action="account.php">
+      <input style="margin-top:12%;left:10%;" type="text" class="form-ui" placeholder="Username">
+      <input style="margin-top:36%;left:10%;" type="password" class="form-ui" placeholder="Password">
+      <button style="margin-top:68%;left:10.5%;" class="btn btn-md btn-dark btn-block form-btn" type="submit">Sign in</button>
+    </form>
+  </div>
 </div>
 
 <footer class="footer">
