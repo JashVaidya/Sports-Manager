@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Welcome</title>
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -35,20 +33,12 @@
     </div>
 </nav>
 
-
-<div class="jumbotron">
-    <div class="container">
-        <header class="landing">
-            <div class="container">
-                <div class="landing-text">
-                    <form class="form-signin">
-                        <input type="text" id="search" class="form-control" placeholder="Search Team or Player"
-                               required="">
-                        <button style="margin-top: 10px;" class="btn btn-md btn-dark btn-block" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </header>
+<div id="homebg" class="jumbotron">
+    <div class="glass-search">
+      <form class="form-signin">
+        <input type="text" class="form-ui" style="margin-top:7%;left:11%;" placeholder="Team or Player" required="">
+        <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
+      </form>
     </div>
 </div>
 
@@ -68,5 +58,4 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
