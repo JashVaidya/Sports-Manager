@@ -1,84 +1,125 @@
-header.landing {
-    text-align: center;
-    color: black;
-}
-
-header.landing .landing-text {
-    padding-top: 150px;
-    padding-bottom: 100px;
-}
-
-header.landing .landing-text .landing-lead-in {
-    font-size: 22px;
-    font-style: italic;
-    line-height: 22px;
-    margin-bottom: 25px;
-  }
-
-header.landing .landing-text .landing-heading {
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 50px;
-    margin-bottom: 25px;
+input:focus {
+  outline: none;
 }
 
 ::-webkit-input-placeholder {
-    text-align: center;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  text-align: left;
+  color: black;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-    text-align: center;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  text-align: left;
+  color: black;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-    text-align: center;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  text-align: left;
+  color: black;
 }
 
 :-ms-input-placeholder {
-    text-align: center;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  text-align: left;
+  color: black;
 }
 
-.jumbotron{
-    height: 100vh;
+.jumbotron {
+  height: 100vh;
 }
 
 .form-signin {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
+  position: relative;
+  width: 400px;
+  z-index: 1;
 }
-.form-signin .checkbox {
-    font-weight: 400;
+
+.glass-search {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  margin: 0 auto;
+  margin-top: 9%;
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
 }
-.form-signin .form-control {
-    position: relative;
-    box-sizing: border-box;
-    height: auto;
-    padding: 10px;
-    font-size: 16px;
+.glass-search:after {
+ content: '';
+ width: 400px;
+ height: 250px;
+ background: inherit;
+ position: absolute;
+ left: -25px;
+ top: -25px;
+ filter: blur(14px);
 }
-.form-signin .form-control:focus {
-    z-index: 2;
+
+.glass-signin-join {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  margin-top: 9%;
+  background: inherit;
+  border-radius: 2px;
+  overflow: hidden;
 }
-.form-signin input[type="email"] {
-    margin-bottom: -1px;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+.glass-signin-join:after {
+ content: '';
+ width: 400px;
+ height: 400px;
+ background: inherit;
+ position: absolute;
+ left: -25px;
+ top: -25px;
+ filter: blur(14px);
 }
-.form-signin input[type="password"] {
-    margin-bottom: 10px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+
+.form-btn {
+  letter-spacing: 2px;
+  border-radius: 2px;
+  position: absolute;
+  border: none;
+  width: 300px;
+  height: 46px;
+  left: 12.5%;
+}
+
+.form-ui {
+  border-bottom: solid thin;
+  border-radius: 2px;
+  position: absolute;
+  border-right: none;
+  border-left: none;
+  background: none;
+  border-top: none;
+  width: 300px;
+  height: 46px;
 }
 
 img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-#searchbg {
-    background-image: url("../Assets/bg.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
+#searchbg, #homebg, #loginbg, #accountbg {
+  -webkit-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+#searchbg, #homebg {
+  background-image: url("field.jpg");
+}
+#loginbg {
+  background-image: url("ball.jpg");
+}
+#accountbg {
+  background-image: url("helmet.jpg");
 }
