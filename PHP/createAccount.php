@@ -34,32 +34,14 @@
     </div>
 </nav>
 
-<div class="jumbotron">
-    <div class="container">
-        <header class="landing">
-            <div class="container">
-                <div class="landing-text">
-                    <form class="form-signin">
-                        <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-                        <label for="inputUserName" class="sr-only">Email address</label>
-                        <input type="text" id="inputUserName" class="form-control" placeholder="Username" required=""
-                               autofocus="">
-                        <label for="inputPassword" class="sr-only">Password</label>
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password"
-                               required="">
-                        <label for="inputBirthday" class="sr-only">Email address</label>
-                        <input style="margin-top: -10px; align-content: center;" type="date" id="inputBirthday" class="form-control" placeholder="Birthday" required=""
-                               autofocus="">
-                        <label class="radio-inline"><input type="radio" name="gender"> Male</label>
-                        <label class="radio-inline"><input type="radio" name="gender"> Female</label>
-                        <label class="radio-inline"><input type="radio" name="gender"> Other</label>
-
-                        <button class="btn btn-md btn-dark btn-block" type="submit">Sign Up</button>
-                    </form>
-                </div>
-            </div>
-        </header>
-    </div>
+<div id="accountbg" class="jumbotron">
+  <div class="glass-signin-join">
+    <form class="form-signin" action="account.php">
+      <input style="margin-top:12%;left:10%;" type="text" class="form-ui" placeholder="Username">
+      <input style="margin-top:36%;left:10%;" type="password" class="form-ui" placeholder="Password">
+      <button style="margin-top:68%;left:10.5%;" class="btn btn-md btn-dark btn-block form-btn" type="submit">Join</button>
+    </form>
+  </div>
 </div>
 
 <footer class="footer">
