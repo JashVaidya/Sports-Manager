@@ -115,11 +115,11 @@ img:hover {
   background-size: cover;
 }
 #searchbg, #homebg {
-  background-image: url("field.jpg");
+  background-image: url("../Assets/field.jpg");
 }
 #loginbg {
-  background-image: url("ball.jpg");
+  background-image: url("../Assets/ball.jpg");
 }
 #accountbg {
-  background-image: url("helmet.jpg");
+  background-image: url("../Assets/helmet.jpg");
 }
