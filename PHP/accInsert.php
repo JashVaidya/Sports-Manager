@@ -20,12 +20,15 @@
 
         $result = mysqli_query($conn,"INSERT into wmabry2.users (username, password) VALUES 
         							('$username', '$password')");
+        /**
+         * Checks to see if the query failed to insert the new user into the database and 
+         * if it does fail echo that the username already exists and to choose a different one
+         * Possibly exchange this echo statement for a javascript alert() statement then
+         * redirect back to the createAccount.php
+         */
+        if (!$result) {
+                echo "Account already exists! Please choose a different username.";  
+        }
 
-        //$result = mysqli_query($conn,"INSERT into wmabry2.users (username, password)
-        //                             SELECT DISTINCT username
-        //                              FROM wmabry2.users u
-        //                              WHERE 
-        //                               NOT EXISTS (SELECT username FROM wmabry2.users users
-        //                                           WHERE u.username = users.username");
         mysqli_close($conn);
 ?>
