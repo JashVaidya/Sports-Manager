@@ -8,26 +8,22 @@
 
         $username = $_POST['username'];
         $password = sha1($_POST['password']);
-
-	echo $username;
-	echo $password;
-
       
 
         /**
          * Check db connection 
          */
         if (mysqli_connect_errno()) {
-            echo "Failed to connect to MySQL :" . mysqli_conect_error();
+            //echo "Failed to connect to MySQL :" . mysqli_conect_error();
         }
         else {
-          echo "Connection was OK!\n";
+          	//echo "Connection was OK!\n";
         }
 
         $result = mysqli_query($conn,"INSERT into wmabry2.users (username, password) VALUES 
         							('$username', '$password')");
 
-	 /**
+	 	/**
          * Checks to see if the query failed to insert the new user into the database and 
          * if it does fail echo that the username already exists and to choose a different one
          * Possibly exchange this echo statement for a javascript alert() statement then
@@ -36,9 +32,11 @@
         if (!$result) {
                 echo "Account already exists! Please choose a different username.";  
         }
-	else {
-		echo "Account inserted!";
-	}
+		else {
+				echo "Account inserted!";
+				session_start();
+				$_SESSION['username'] = $username;
+		}
 
         mysqli_close($conn);
 ?>
