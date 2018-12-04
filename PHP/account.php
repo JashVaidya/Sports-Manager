@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +14,12 @@
 </head>
 
 <body>
+<?php
+
+
+
+
+?>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.php">SM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -28,7 +37,7 @@
                 <a class="nav-link" href="teamSearch.php">Search</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="account.php">Jash</a>
+                <a class="nav-link" href="account.php">User</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php">Sign Out</a>

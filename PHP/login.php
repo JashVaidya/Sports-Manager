@@ -1,3 +1,32 @@
+<?php
+session_start();
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$conn = mysqli_connect("localhost","wmabry2","Williamowns1","wmabry2");
+
+		//get input
+    	$loginUser = mysqli_real_escape_string($conn, $_POST['loginUser']);
+    	$loginPass = sha1(mysqli_real_escape_string($conn, $_POST['loginPass']));
+
+    	//query input
+    	$sql = "SELECT username FROM users WHERE username = '$loginUser' AND password = '$loginPass'";
+    	$result = mysqli_query($conn,$sql);
+    	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    	$active = $row['active'];
+
+    	//count row result which should be = 1 if sucsessful login
+    	$count = mysqli_num_rows($result);
+    	if ($count == 1) {
+    		session_register("loginUser");
+    		//set the users login as the session logged in user for future pages
+    		$_SESSION['login_user'] = $loginUser;
+
+    		header("location: account.php");
+    	} else {
+    		$error = "Your login name or password was invalid";
+    	}
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,13 +64,12 @@
 <div id="loginbg" class="jumbotron">
   <div class="glass-signin-join">
     <form class="form-signin" action="account.php">
-      <input style="margin-top:12%;left:10%;" type="text" class="form-ui" placeholder="Username">
-      <input style="margin-top:36%;left:10%;" type="password" class="form-ui" placeholder="Password">
+      <input style="margin-top:12%;left:10%;" name="loginUser" type="text" class="form-ui" placeholder="Username">
+      <input style="margin-top:36%;left:10%;" name="loginPass" type="password" class="form-ui" placeholder="Password">
       <button style="margin-top:68%;left:10.5%;" class="btn btn-md btn-dark btn-block form-btn" type="submit">Sign in</button>
     </form>
   </div>
 </div>
-
 <footer class="footer">
     <div class="container">
         <span class="text-muted">Team Contact Info Here</span>
