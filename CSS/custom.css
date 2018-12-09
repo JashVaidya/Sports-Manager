@@ -108,6 +108,20 @@ img:hover {
   cursor: pointer;
 }
 
+#error {
+	visibility: hidden;
+	text-align: center;
+	position: absolute;
+	height: 45px;
+	width: 250px;
+	letter-spacing: 1px;
+	background: #c0392b;
+	font-size: 0.7em;
+	border-radius: 5px;
+	padding: 6px;
+	color: #fff;
+}
+
 #searchbg, #homebg, #loginbg, #accountbg {
   -webkit-background-size: cover;
   background-repeat: no-repeat;
