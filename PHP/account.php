@@ -47,6 +47,7 @@ session_start();
             header('location: login.php');
         }
     }
+    mysqli_close($conn);
 ?>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -73,53 +74,107 @@ session_start();
         <div class="row">
             <div class="col .text-center">
                 </br></br>
-                <img src="../Assets/jash.jpg" alt="Picture of Jash" class="img-thumbnail rounded">
+                <img src="../Assets/favorites.jpg" alt="Favorites" class="img-thumbnail rounded">
                 <h5><?php echo $_SESSION['login_user']; ?></h5>
                 <h5>Favorite team: Cowboys</h5>
                 <a href="accountSettings.php"><button class="btn btn-sm btn-dark">Edit Account</button></a>
                 <br><br>
             </div>
+            <h1 align="right">Favorited Players</h1>
             <table class="table">
-                <thead class="thead-dark">
+                <thread class="thread-dark">
                 <tr>
-                    <th scope="col">Teams</th>
-                    <th scope="col">Total Score</th>
-                    <th scope="col">Wins</th>
-                    <th scope="col">Losses</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Position</th>
+                    <th>Height(CM)</th>
+                    <th>Weight(KG)</th>
+                    <th>College</th>
+                    <th>Day of Birth</th>
+                    <th>Current Team</th>
                 </tr>
-                </thead>
-                <tbody>
+                <?php
+                    $user = $_SESSION['login_user'];
+                    $conn = mysqli_connect("localhost","wmabry2","Williamowns1","wmabry2");
+                    $sql = "SELECT * FROM wmabry2.players NATURAL JOIN wmabry2.favoriteplayers WHERE username='$user'";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row=$result->fetch_assoc()) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row['firstname']; ?></td>
+                                <td><?php echo $row['lastname']; ?></td>
+                                <td><?php echo $row['position']; ?></td>
+                                <td><?php echo $row['heightCM']; ?></td>
+                                <td><?php echo $row['weightKG']; ?></td>
+                                <td><?php echo $row['college']; ?></td>
+                                <td><?php echo $row['DoB']; ?></td>
+                                <td><?php echo $row['teamname']; ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    else {
+                        ?>
+                        <tr>
+                            <th colspan="2">No Favorites Set!</th>
+                        </tr>
+                        <?php
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </thread>
+            </table>
+            <h1 align="right">Favorited Teams</h1>
+            <table class="table">
+                <thread class="thread-dark">
                 <tr>
-                    <th scope="row">Team 1</th>
-                    <td>X</td>
-                    <td>Y</td>
-                    <td>Z</td>
+                    <th>Team Name</th>
+                    <th>City</th>
+                    <th>Founded</th>
+                    <th>Conference</th>
+                    <th>Division</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Ties</th>
+                    <th>Rushing Yards</th>
+                    <th>Passing Yards</th>
+                    <th>Recieving Yards</th>
                 </tr>
-                <tr>
-                    <th scope="row">Team 2</th>
-                    <td>X</td>
-                    <td>Y</td>
-                    <td>Z</td>
-                </tr>
-                <tr>
-                    <th scope="row">Team 3</th>
-                    <td>X</td>
-                    <td>Y</td>
-                    <td>Z</td>
-                </tr>
-                <tr>
-                    <th scope="row">. . .</th>
-                    <td>. . .</td>
-                    <td>. . .</td>
-                    <td>. . .</td>
-                </tr>
-                <tr>
-                    <th scope="row">Team N</th>
-                    <td>X</td>
-                    <td>Y</td>
-                    <td>Z</td>
-                </tr>
-                </tbody>
+                <?php
+                    $user = $_SESSION['login_user'];
+                    $conn = mysqli_connect("localhost","wmabry2","Williamowns1","wmabry2");
+                    $sql = "SELECT * FROM wmabry2.teams NATURAL JOIN wmabry2.favoriteteams WHERE username='$user'";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        while ($row=$result->fetch_assoc()) {
+                            ?>
+                            <tr>
+                                <td><?php echo $row['teamname']; ?></td>
+                                <td><?php echo $row['city']; ?></td>
+                                <td><?php echo $row['founded']; ?></td>
+                                <td><?php echo $row['conference']; ?></td>
+                                <td><?php echo $row['division']; ?></td>
+                                <td><?php echo $row['wins']; ?></td>
+                                <td><?php echo $row['losses']; ?></td>
+                                <td><?php echo $row['ties']; ?></td>
+                                <td><?php echo $row['rushingyards']; ?></td>
+                                <td><?php echo $row['passingyards']; ?></td>
+                                <td><?php echo $row['recievingyards']; ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    else {
+                        ?>
+                        <tr>
+                            <th colspan="2">No Favorites Set!</th>
+                        </tr>
+                        <?php
+                    }
+                    mysqli_close($conn);
+                    ?>
+                </thread>
             </table>
         </div>
     </div>

@@ -36,12 +36,6 @@
 
 <div id="accountbg" class="jumbotron">
   <div class="glass-signin-join">
- <!--
-changed
-action="account.php" to "accSuccess.php"
-accSuccess inserts the new username and sha1(password)
-into the database after making sure its unqiue
- -->
     <form class="form-signin" action="accInsert.php" method="post">
       <input style="margin-top:12%;left:10%;" name="username" type="text" class="form-ui" placeholder="Username">
       <input style="margin-top:36%;left:10%;" name="password" type="password" class="form-ui" placeholder="Password">

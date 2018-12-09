@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start();?>
 <html lang="en">
 
 <head>
@@ -30,7 +31,7 @@
                 <a class="nav-link" href="teamSearch.php">Search</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="account.php">Jash<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="account.php"><?php echo $_SESSION['login_user']; ?><span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
@@ -44,8 +45,9 @@
 <div id="searchbg" class="jumbotron">
   <div class="glass-search">
     <form class="form-signin">
-      <input type="text" class="form-ui" style="margin-top:7%;left:11%;" placeholder="Team or Player" required="">
+      <input type="text" class="form-ui" style="margin-top:7%;left:11%;" name="search" placeholder="Team or Player" required="">
       <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
+      <h3></h3>
     </form>
   </div>
 </div>

@@ -33,9 +33,10 @@
                 echo "Account already exists! Please choose a different username.";  
         }
 		else {
-				echo "Account inserted!";
 				session_start();
 				$_SESSION['username'] = $username;
+                //alert it was succsessful? 
+                header('location: login.php');
 		}
 
         mysqli_close($conn);
