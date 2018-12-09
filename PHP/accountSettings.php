@@ -24,6 +24,42 @@
 </head>
 
 <body>
+
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $conn = mysqli_connect("localhost","wmabry2","Williamowns1","wmabry2");
+
+    //get input
+    $loginUser = mysqli_real_escape_string($conn, $_POST['loginUser']);
+    $loginPass = sha1(mysqli_real_escape_string($conn, $_POST['loginPass']));
+
+    //query input
+    $sql = "SELECT username FROM users WHERE username = '$loginUser' AND password = '$loginPass'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $active = $row['active'];
+
+    //count row result which should be = 1 if sucsessful login
+    $count = mysqli_num_rows($result);
+    if ($count == 1) {
+        session_register("loginUser");
+        //set the users login as the session logged in user for future pages
+        $_SESSION['login_user'] = $loginUser;
+    } else {
+        //invalid
+        echo '<script language="javascript">';
+        echo 'alert("Invalid Username or Password!")';
+        echo '</script>';
+        header('location: login.php');
+    }
+}
+mysqli_close($conn);
+?>
+
+
+
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.php">SM</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

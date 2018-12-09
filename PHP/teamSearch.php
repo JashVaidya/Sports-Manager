@@ -45,8 +45,11 @@
 <div id="searchbg" class="jumbotron">
   <div class="glass-search">
     <form class="form-signin">
-      <input type="text" class="form-ui" style="margin-top:7%;left:11%;" name="search" placeholder="Team or Player" required="">
-      <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
+        <input id="player" type="text" class="form-ui" style="margin-top:7%;left:11%;" name="search"
+               placeholder="Search Player" required="">
+        <input id="team" type="text" class="form-ui" style="margin-top:20%;left:11%;" name="search" placeholder="Search Team"
+               required="">
+        <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
       <h3></h3>
     </form>
   </div>
