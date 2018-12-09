@@ -44,21 +44,18 @@ input:focus {
   position: relative;
   width: 400px;
   height: 250px;
-  margin: 0 auto;
-  margin-top: 9%;
   background: inherit;
   border-radius: 2px;
   overflow: hidden;
 }
-.glass-search:after {
- content: '';
- width: 400px;
- height: 250px;
- background: inherit;
- position: absolute;
- left: -25px;
- top: -25px;
- filter: blur(14px);
+
+.container-forms {
+	flex-direction: row;
+	display: flex;
+	margin: 0 auto;
+	margin-top: 9%;
+	height: 250px;
+	width: 700px;
 }
 
 .glass-signin-join {
