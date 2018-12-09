@@ -34,7 +34,6 @@
         }
 		else {
 				session_start();
-				$_SESSION['username'] = $username;
                 //alert it was succsessful? 
                 header('location: login.php');
 		}

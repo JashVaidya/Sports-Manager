@@ -8,6 +8,17 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Login</title>
+	<?php
+		session_start();
+		if(isset($_SESSION['user'])){
+			$loggedIn = true;
+			if($_SESSION['role'] == 1){
+				$admin = true;
+			} else {
+				$admin = false;
+			}
+		}
+	?>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">

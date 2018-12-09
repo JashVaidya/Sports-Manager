@@ -8,6 +8,19 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Account</title>
+	<?php
+		if(isset($_SESSION['user'])){
+			$loggedIn = true;
+			if($_SESSION['role'] == 1){
+				$admin = true;
+			} else {
+				$admin = false;
+			}
+		} else {
+			//Redirects to login if not logged in
+			header("location:login.php");	
+		}
+	?>
 </head>
 
 <body>

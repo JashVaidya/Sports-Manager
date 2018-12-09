@@ -38,7 +38,7 @@ session_start();
         if ($count == 1) {
             session_register("loginUser");
             //set the users login as the session logged in user for future pages
-            $_SESSION['login_user'] = $loginUser;
+            $_SESSION['user'] = $loginUser;
         } else {
             //invalid
             echo '<script language="javascript">';
@@ -46,7 +46,9 @@ session_start();
             echo '</script>';
             header('location: login.php');
         }
-    }
+    } else {
+		header('locations: login.php');
+	}
     mysqli_close($conn);
 ?>
 
