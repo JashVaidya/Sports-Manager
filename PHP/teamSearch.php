@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<?php session_start();?>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,7 +8,6 @@
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Welcome</title>
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -23,36 +20,42 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
-                <a class="nav-link" href="index.php">Home</a>
-            </li>
-
             <li class="nav-item active">
-                <a class="nav-link" href="teamSearch.php">Search</a>
+                <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="account.php"><?php echo $_SESSION['login_user']; ?><span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="login.php">Login</a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="index.php">Sign Out</a>
+                <a class="nav-link" href="createAccount.php">Create Account</a>
             </li>
         </ul>
     </div>
 </nav>
 
+<div id="homebg" class="jumbotron">
 
-<div id="searchbg" class="jumbotron">
-  <div class="glass-search">
-    <form class="form-signin">
-        <input id="player" type="text" class="form-ui" style="margin-top:7%;left:11%;" name="search"
-               placeholder="Search Player" required="">
-        <input id="team" type="text" class="form-ui" style="margin-top:20%;left:11%;" name="search" placeholder="Search Team"
-               required="">
-        <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
-      <h3></h3>
-    </form>
-  </div>
+	<div class="container-forms">
+		<div class="glass-search team">
+		  <form class="form-signin">
+			<input id="team-input" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
+			placeholder="Team" required="" onKeyDown="erase(this)">
+			
+			<button class="btn btn-md btn-dark btn-block form-btn" 
+			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
+		  </form>
+		</div>
+		
+		<div class="glass-search player">
+		  <form class="form-signin">
+			<input id="player-input" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
+			placeholder="Player" required="" onKeyDown="erase(this)">
+			
+			<button class="btn btn-md btn-dark btn-block form-btn" 
+			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
 </div>
 
 <footer class="footer">
@@ -72,4 +75,14 @@
         crossorigin="anonymous"></script>
 </body>
 
+<script>
+	function erase(e) {
+		if (e.id === 'team-input') {
+			document.querySelector('#player-input').value = '';
+		}
+		else {
+			document.querySelector('#team-input').value = '';
+		}
+	}
+</script>
 </html>
