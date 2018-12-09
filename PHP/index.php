@@ -34,12 +34,28 @@
 </nav>
 
 <div id="homebg" class="jumbotron">
-    <div class="glass-search">
-      <form class="form-signin">
-        <input type="text" class="form-ui" style="margin-top:7%;left:11%;" placeholder="Team or Player" required="">
-        <button class="btn btn-md btn-dark btn-block form-btn" style="margin-top:33%;left:10.5%;" type="submit">Search</button>
-      </form>
-    </div>
+
+	<div class="container-forms">
+		<div class="glass-search team">
+		  <form class="form-signin">
+			<input id="team-input" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
+			placeholder="Team" required="">
+			
+			<button class="btn btn-md btn-dark btn-block form-btn" 
+			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
+		  </form>
+		</div>
+		
+		<div class="glass-search player">
+		  <form class="form-signin">
+			<input id="player-input" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
+			placeholder="Player" required="">
+			
+			<button class="btn btn-md btn-dark btn-block form-btn" 
+			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
+		  </form>
+		</div>
+	</div>
 </div>
 
 <footer class="footer">
