@@ -8,17 +8,6 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/custom.css">
     <title>Login</title>
-	<?php
-		session_start();
-		if(isset($_SESSION['user'])){
-			$loggedIn = true;
-			if($_SESSION['role'] == 1){
-				$admin = true;
-			} else {
-				$admin = false;
-			}
-		}
-	?>
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -46,10 +35,15 @@
 
 <div id="loginbg" class="jumbotron">
   <div class="glass-signin-join">
-    <form class="form-signin" action="account.php" method="post">
-      <input style="margin-top:12%;left:10%;" name="loginUser" type="text" class="form-ui" placeholder="Username">
-      <input style="margin-top:36%;left:10%;" name="loginPass" type="password" class="form-ui" placeholder="Password">
-      <button style="margin-top:68%;left:10.5%;" class="btn btn-md btn-dark btn-block form-btn" type="submit">Sign in</button>
+    <form onsubmit="return val()" action="account.php" class="form-signin" method="post">
+      <input id="un" style="margin-top:12%;left:10%;" name="loginUser" type="text" class="form-ui" placeholder="Username">
+      <input id="pw" style="margin-top:36%;left:10%;" name="loginPass" type="password" class="form-ui" placeholder="Password">
+	  <div id="error" style="left:18%;">
+		<p id="message"></p>
+	  </div>
+      <button id="btn" style="margin-top:68%;left:10.5%;" class="btn btn-md btn-dark btn-block form-btn" type="submit">
+		Sign in
+	  </button>
     </form>
   </div>
 </div>
@@ -59,5 +53,26 @@
     </div>
 </footer>
 </body>
+
+<script>
+	function val() {
+		let error = document.querySelector('#error');
+		let message = document.querySelector('#message');
+		let un = document.querySelector('#un');
+		let pw = document.querySelector('#pw');
+		
+		if ((un.value === '' || pw.value === '')) {
+			message.innerHTML = 'Fields must contain characters.';
+			error.style.visibility = 'visible';
+			return false;
+		}
+		else if (un.value.length > 20 || pw.value.length > 20) {
+			message.innerHTML = 'Fields must be less than 20 characters.';
+			error.style.visibility = 'visible';
+			return false;
+		}
+		return true;
+	}
+</script>
 
 </html>
