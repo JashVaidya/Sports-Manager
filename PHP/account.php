@@ -19,10 +19,10 @@
     </button>
 
     <?php
-session_start();
+	session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = mysqli_connect("localhost","wmabry2","Williamowns1","wmabry2");
-
+		
         //get input
         $loginUser = mysqli_real_escape_string($conn, $_POST['loginUser']);
         $loginPass = sha1(mysqli_real_escape_string($conn, $_POST['loginPass']));
@@ -38,17 +38,15 @@ session_start();
         if ($count == 1) {
             session_register("loginUser");
             //set the users login as the session logged in user for future pages
-            $_SESSION['user'] = $loginUser;
+            $_SESSION['login_user'] = $loginUser;
         } else {
             //invalid
             echo '<script language="javascript">';
             echo 'alert("Invalid Username or Password!")';
             echo '</script>';
-            header('location: login.php');
+            header('location: index.php');
         }
-    } else {
-		header('locations: login.php');
-	}
+    }
     mysqli_close($conn);
 ?>
 
@@ -191,3 +189,4 @@ session_start();
 </body>
 
 </html>
+
