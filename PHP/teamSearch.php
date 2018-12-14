@@ -40,19 +40,17 @@
 		<div class="glass-search team">
 		  <form class="form-signin" action="results.php" method="post">
 			<input id="team-input" name="teamSearch" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
-			placeholder="Team" required="" onKeyDown="erase(this)">
+			placeholder="Team" onKeyDown="erase(this)">
 			
 			<button class="btn btn-md btn-dark btn-block form-btn" 
-			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
-		  </form>
+			style="margin-top:33%;left:5.5%;" type="submit" value="teamSub" name="teamSub">Team Search</button>
 		</div>
 		<div class="glass-search player">
-		  <form class="form-signin" action="results.php" method="post">
-			<input id="player-input" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
-			placeholder="Player" required="" onKeyDown="erase(this)">
+			<input id="player-input" name="playerSearch" type="text" class="form-ui" style="left:6%;text-indent:100px;" 
+			placeholder="Player" onKeyDown="erase(this)">
 			
 			<button class="btn btn-md btn-dark btn-block form-btn" 
-			style="margin-top:33%;left:5.5%;" type="submit">Search</button>
+			style="margin-top:37.5%;left:5.5%;" type="submit" value="playerSub" name="playerSub">Player Search</button>
 		  </form>
 		</div>
 	</div>
